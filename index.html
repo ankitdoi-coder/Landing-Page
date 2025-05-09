@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RJ Constructions Pvt Ltd</title>
+    <style>
+        :root {
+            --primary-color: #0a3d62;
+            --secondary-color: #82ccdd;
+            --accent-color: #f39c12;
+            --bg-card: #f0f6fb;
+            --border-radius: 12px;
+            --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+            --text-dark: #222;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Container for lists: flex layout */
+        .list-container {
+            display: flex;
+            justify-content: center;
+            gap: 3em;
+            flex-wrap: wrap;
+            margin-top: 1em;
+        }
+
+        /* Card styling for each list */
+        .list-card {
+            background: var(--bg-card);
+            border-radius: var(--border-radius);
+            padding: 1.5em 2em;
+            box-shadow: var(--box-shadow);
+            flex: 1 1 300px;
+            max-width: 400px;
+            transition: transform 0.3s ease;
+        }
+
+        .list-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Heading for list area */
+        h2 {
+            text-align: center;
+            color: var(--primary-color);
+            font-weight: 700;
+            margin-bottom: 0.8em;
+        }
+
+        /* Custom ordered list style */
+        ol {
+            counter-reset: item;
+            padding-left: 1em;
+            list-style: none;
+            color: var(--primary-color);
+        }
+
+        ol li {
+            counter-increment: item;
+            margin-bottom: 1em;
+            padding-left: 2.5em;
+            position: relative;
+            font-size: 1.1em;
+            font-weight: 500;
+            line-height: 1.4;
+            color: #0b3d66;
+            cursor: default;
+            user-select: none;
+            transition: color 0.3s ease;
+        }
+
+        /* Numbering circles on the left side */
+        ol li::before {
+            content: counter(item);
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--accent-color);
+            color: #fff;
+            width: 1.8em;
+            height: 1.8em;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 1.8em;
+            font-weight: 700;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+        }
+
+        ol li:hover {
+            color: var(--accent-color);
+        }
+
+        /* Responsive tweak for smaller screens */
+        @media (max-width: 600px) {
+            .list-container {
+                flex-direction: column;
+                align-items: center;
+                gap: 2em;
+            }
+
+            .list-card {
+                max-width: 90vw;
+            }
+        }
+
+        header,
+        footer {
+            background: linear-gradient(135deg, #0a3d62, #82ccdd);
+            color: white;
+            padding: 1.5em;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+
+        nav a {
+            margin: 0 15px;
+            color: white;
+            text-decoration: none;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(130, 204, 221, 0.8), rgba(130, 204, 221, 0.8)), url('your-background-image.jpg') no-repeat center center/cover;
+            padding: 4em;
+            text-align: center;
+            color: white;
+        }
+
+
+        .section {
+            padding: 2em;
+        }
+
+        h2 {
+            color: #0a3d62;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 0.5em 0;
+        }
+
+        .contact-form button {
+            padding: 0.7em 2em;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-form button:hover {
+            background-color: #1a5d8a;
+            /* Darker shade for hover */
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 1em;
+            margin: 0.5em 0;
+            border: 1px solid #ccc;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 0.7em;
+            margin: 0.5em 0;
+            border: 1px solid #ccc;
+            border-radius: var(--border-radius);
+            transition: border-color 0.3s ease;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: var(--primary-color);
+            outline: none;
+        }
+
+
+        footer {
+            font-size: 0.9em;
+        }
+
+        img {
+            max-width: 90%;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            transition: transform 0.3s ease;
+        }
+
+        img:hover {
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            .section {
+                padding: 1em;
+            }
+
+            .section div {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>RJ Constructions Pvt Ltd</h1>
+        <nav>
+            <a href="#services">Services</a>
+            <a href="#products">Products</a>
+            <a href="#contact">Contact Us</a>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <h2>We Build Dreams & Deliver Quality Materials</h2>
+        <p>Trusted services in house building, renovation, material supply, and more.</p>
+    </div>
+
+    <section class="section" id="services" style="background-color: #ffffff;">
+        <h2>Our Services</h2>
+        <div style="display: flex; justify-content: center; gap: 100px; flex-wrap: wrap;">
+
+            <!-- Column 1 -->
+            <div style="text-align: left;">
+                <ol start="1">
+                    <li>House Building</li>
+                    <li>मिस्त्री (Mistri Work)</li>
+                    <li>Tiles Fitting</li>
+                    <li>JCB Related Work</li>
+                    <li>Roller Service</li>
+                </ol>
+            </div>
+
+            <!-- Column 2 -->
+            <div style="text-align: left;">
+                <ol start="6">
+                    <li>Gramo Service</li>
+                    <li>Truck Service</li>
+                    <li>Tractor Service</li>
+                    <li>Farming Thekedari</li>
+                    <li>ग्राम पंचायत कार्य (Gram Panchayat Work)</li>
+                </ol>
+            </div>
+
+        </div>
+    </section>
+    <div style="text-align: center; margin: 20px 0;">
+        <img src="140-Common-Construction-Terms-to-Know.jpg" alt="RJ Construction Services"
+            style="max-width: 90%; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
+    </div>
+
+    <section class="section" id="products" style="background-color: #f8f8f8;">
+        <h2>Our Products</h2>
+        <div style="display: flex; justify-content: center; gap: 100px; flex-wrap: wrap;">
+
+            <!-- Column 1 -->
+            <div style="text-align: left;">
+                <ol start="1">
+                    <li>Concrete</li>
+                    <li>Steel</li>
+                    <li>Wood</li>
+                    <li>Brick</li>
+                    <li>Stone</li>
+                    <li>Glass</li>
+                </ol>
+            </div>
+
+            <!-- Column 2 -->
+            <div style="text-align: left;">
+                <ol start="7">
+                    <li>Aluminum</li>
+                    <li>Plastic</li>
+                    <li>Cement</li>
+                    <li>Clay Tiles</li>
+                    <li>Gypsum</li>
+                    <li>Bamboo</li>
+                </ol>
+            </div>
+
+        </div>
+        <div style="text-align: center; margin: 20px 0;">
+            <img src="imng.jpg" alt="Construction Materials"
+                style="width: 90%; max-width: 1200px; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
+        </div>
+    </section>
+    <section class="section" style="background-color: #f1f1f1; text-align: center;">
+        <h2>Call Us Now</h2>
+        <p style="font-size: 1.5em; font-weight: bold; color: #0a3d62;">
+            Ankit Kumar Gurjar <br />
+            📞 +91-9352134907
+        </p>
+    </section>
+
+
+    <section class="section" id="contact">
+        <h2>Contact Us</h2>
+        <form class="contact-form">
+            <input type="text" placeholder="Your Name" required />
+            <input type="tel" placeholder="Mobile Number" required />
+            <input type="email" placeholder="Email Address" required />
+            <textarea rows="4" placeholder="Your Message"></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 RJ Constructions Pvt Ltd. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>
